@@ -12,18 +12,27 @@ import 'package:mylogistics/viewmodel/add/add_statetypeahead.dart';
 import 'package:mylogistics/viewmodel/utility/utility_blocimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_eventimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(name: "myLogistics").then((fireValue) {
-    print("fire val: "+fireValue.toString());
+  await Firebase.initializeApp(
+          name: "myLogistics",
+          options: FirebaseOptions(
+              apiKey: "AIzaSyD522itDp3SA2t8anLKQlewWE7-4VTScxQ",
+              appId: "1:726528347061:android:e80eb6ce882c532b19e7fc",
+              messagingSenderId:"726528347061",
+              projectId:"mylogistics-feda6"))
+      .then((fireValue) {
+    print("fire val: " + fireValue.toString());
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     runApp(AddView());
-  }).catchError((onError){print("fire val error: "+onError);});
+  }).catchError((onError) {
+    print("fire val error: " + onError.toString());
+  });
 }
 
 class AddView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -115,7 +124,8 @@ class AddViewWidget extends StatelessWidget {
                 } else {
                   return GestureDetector(
                       onTap: () {
-                        addBlocImage.add(UtilityEventImageChangeFileImagePath());
+                        addBlocImage
+                            .add(UtilityEventImageChangeFileImagePath());
                       },
                       child: Container(
                         height: mediaSize.height * .475,
