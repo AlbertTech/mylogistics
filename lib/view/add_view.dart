@@ -14,10 +14,10 @@ import 'package:mylogistics/viewmodel/utility/utility_eventimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
 
 void main() async {
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(AddView());
 }
 
