@@ -12,52 +12,33 @@ import 'package:mylogistics/viewmodel/add/add_statetypeahead.dart';
 import 'package:mylogistics/viewmodel/utility/utility_blocimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_eventimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(AddView());
+  await Firebase.initializeApp(name: "myLogistics").then((fireValue) {
+    print("fire val: "+fireValue.toString());
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    runApp(AddView());
+  }).catchError((onError){print("fire val error: "+onError);});
 }
 
 class AddView extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    final Future<FirebaseApp> _initialization = Firebase.initializeApp(
-        name: "myLogistics",
-        options: FirebaseOptions(
-            apiKey: "AIzaSyD522itDp3SA2t8anLKQlewWE7-4VTScxQ",
-            appId: "1:726528347061:android:e80eb6ce882c532b19e7fc",
-            messagingSenderId: "206715481596",
-            projectId: "mylogistics-feda6"));
-
-    return FutureBuilder(
-      // Initialize FlutterFire:
-        future: _initialization,
-        builder: (context, snapshot) {
-          // Check for errors
-          if (snapshot.hasError) {
-            print("error");
-          }
-          // Once complete, show your application
-          if (snapshot.connectionState == ConnectionState.done) {
-            return MaterialApp(
-              home: Scaffold(
-                  resizeToAvoidBottomInset: false,
-                  body: MultiBlocProvider(providers: [
-                    BlocProvider(
-                        create: (context) => AddBlocInsertData(AddRepository())),
-                    BlocProvider(
-                        create: (context) => AddBlocTypeAhead(AddRepository())),
-                    BlocProvider(
-                        create: (context) =>
-                            UtilityBlocImage(AddRepository(), UtilityImageModel())),
-                  ], child: AddViewWidget())),
-            );
-          }
-          // Otherwise, show something whilst waiting for initialization to complete
-          return CircularProgressIndicator();
-        });
+    return MaterialApp(
+      home: Scaffold(
+          resizeToAvoidBottomInset: false,
+          body: MultiBlocProvider(providers: [
+            BlocProvider(
+                create: (context) => AddBlocInsertData(AddRepository())),
+            BlocProvider(
+                create: (context) => AddBlocTypeAhead(AddRepository())),
+            BlocProvider(
+                create: (context) =>
+                    UtilityBlocImage(AddRepository(), UtilityImageModel())),
+          ], child: AddViewWidget())),
+    );
   }
 }
 
@@ -134,8 +115,7 @@ class AddViewWidget extends StatelessWidget {
                 } else {
                   return GestureDetector(
                       onTap: () {
-                        addBlocImage
-                            .add(UtilityEventImageChangeFileImagePath());
+                        addBlocImage.add(UtilityEventImageChangeFileImagePath());
                       },
                       child: Container(
                         height: mediaSize.height * .475,
