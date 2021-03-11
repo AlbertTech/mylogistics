@@ -18,6 +18,8 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
+          file: lib\view\addview.dart
+          asset_name: addview
           channel: "stable"
       - run: dart --version
       - run: flutter pub get
@@ -38,7 +40,7 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build appbundle
+      - run: flutter build appbundle --target=lib/view/add_view.dart
 
   build_ios:
     name: Build Flutter (iOS)
@@ -54,5 +56,5 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build ios --release --no-codesign
+      - run: flutter build ios --release --no-codesign --target=lib/view/add_view.dart
 
