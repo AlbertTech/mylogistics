@@ -5,9 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:mylogistics/model/add/add_repo.dart';
 import 'package:mylogistics/model/utility/UtilityImageModel.dart';
-import 'package:mylogistics/view/sales_view.dart';
-import 'package:mylogistics/view/sell_view.dart';
-import 'package:mylogistics/view/viewproduct_view.dart';
 import 'package:mylogistics/viewmodel/add/add_bloc.dart';
 import 'package:mylogistics/viewmodel/add/add_bloctypeahead.dart';
 import 'package:mylogistics/viewmodel/add/add_eventtypeahead.dart';
@@ -31,13 +28,13 @@ class AddView extends StatelessWidget {
       home: Scaffold(
           resizeToAvoidBottomInset: false,
           body: MultiBlocProvider(providers: [
-           /* BlocProvider(
-                create: (context) => AddBlocInsertData(AddRepository())),*/
+            BlocProvider(
+                create: (context) => AddBlocInsertData(AddRepository())),
             BlocProvider(
                 create: (context) => AddBlocTypeAhead(AddRepository())),
             BlocProvider(
                 create: (context) =>
-                    UtilityBlocImage(AddRepository(), AddImageModel())),
+                    UtilityBlocImage(AddRepository(), UtilityImageModel())),
           ], child: AddViewWidget())),
     );
   }
@@ -46,7 +43,7 @@ class AddView extends StatelessWidget {
 class AddViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final addBlocInsertData = BlocProvider.of<AddBlocInsertData>(context);
+    //final addBlocInsertData = BlocProvider.of<AddBlocInsertData>(context);
     final addBlocTypeAhead = BlocProvider.of<AddBlocTypeAhead>(context);
     final addBlocImage = BlocProvider.of<UtilityBlocImage>(context);
     final Size mediaSize = MediaQuery.of(context).size;

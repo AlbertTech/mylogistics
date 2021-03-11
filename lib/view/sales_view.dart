@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'file:///D:/Programming/Flutter_Projects/mylogistics/lib/model/add/add_repo.dart';
+import 'package:mylogistics/model/add/add_repo.dart';
 import 'package:mylogistics/model/sales/sales_values.dart';
 import 'package:mylogistics/viewmodel/sales/sales_bloc.dart';
 import 'package:mylogistics/viewmodel/sales/sales_events.dart';

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-class AddImageModel {
+class UtilityImageModel {
   File file;
   File get getFile => file;
 

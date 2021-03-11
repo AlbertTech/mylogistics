@@ -21,7 +21,7 @@ class ViewProduct_View extends StatelessWidget {
                 create: (context) => AddBlocInsertData(AddRepository())),
             BlocProvider(
                 create: (context) =>
-                    UtilityBlocImage(AddRepository(), AddImageModel())),
+                    UtilityBlocImage(AddRepository(), UtilityImageModel())),
           ], child: MyViewProductWidget())),
     );
   }
@@ -30,7 +30,7 @@ class ViewProduct_View extends StatelessWidget {
 class MyViewProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final mainBloc = BlocProvider.of<AddBlocInsertData>(context);
+    //final mainBloc = BlocProvider.of<AddBlocInsertData>(context);
     final utilityBlocImage = BlocProvider.of<UtilityBlocImage>(context);
     final Size mediaSize = MediaQuery.of(context).size;
     return Stack(

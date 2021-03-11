@@ -7,7 +7,7 @@ import 'package:mylogistics/model/utility/UtilityImageModel.dart';
 class AddRepository {
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-  AddImageModel addImageModel;
+  UtilityImageModel addImageModel;
 
   Future<String> fetchText() async {
     String myStrToReturn = "";
@@ -26,7 +26,7 @@ class AddRepository {
   }
 
   Future<File> fetchImageSelected() async {
-    addImageModel = new AddImageModel();
+    addImageModel = new UtilityImageModel();
     final pickedFile = await ImagePicker().getImage(source: ImageSource.camera);
     addImageModel.setFile(pickedFile);
     return addImageModel.getFile;
