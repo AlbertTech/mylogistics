@@ -21,7 +21,7 @@ class SellView extends StatelessWidget {
 class MySellViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final mainBloc = BlocProvider.of<AddBlocInsertData>(context);
+    //final mainBloc = BlocProvider.of<AddBlocInsertData>(context);
     final Size mediaSize = MediaQuery.of(context).size;
     return Stack(
       children: [

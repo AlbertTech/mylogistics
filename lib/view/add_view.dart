@@ -22,6 +22,7 @@ void main() async {
 }
 
 class AddView extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +45,9 @@ class AddViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final addBlocInsertData = BlocProvider.of<AddBlocInsertData>(context);
+    // ignore: close_sinks
     final addBlocTypeAhead = BlocProvider.of<AddBlocTypeAhead>(context);
+    // ignore: close_sinks
     final addBlocImage = BlocProvider.of<UtilityBlocImage>(context);
     final Size mediaSize = MediaQuery.of(context).size;
     return Stack(

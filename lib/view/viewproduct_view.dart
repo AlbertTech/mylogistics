@@ -10,7 +10,7 @@ import 'package:mylogistics/viewmodel/utility/utility_eventimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
 
 
-class ViewProduct_View extends StatelessWidget {
+class ViewProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,6 +31,7 @@ class MyViewProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final mainBloc = BlocProvider.of<AddBlocInsertData>(context);
+    // ignore: close_sinks
     final utilityBlocImage = BlocProvider.of<UtilityBlocImage>(context);
     final Size mediaSize = MediaQuery.of(context).size;
     return Stack(
