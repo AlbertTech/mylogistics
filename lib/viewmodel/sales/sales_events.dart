@@ -7,7 +7,7 @@ class EventSales extends Equatable {
 }
 
 class EventSalesChangeSearchType extends EventSales {
-  String newValue;
+  final String newValue;
 
   EventSalesChangeSearchType(this.newValue);
 

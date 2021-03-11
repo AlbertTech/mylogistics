@@ -12,9 +12,9 @@ class StateSales extends Equatable {
   
 }
 
-// ignore: must_be_immutable
+
 class StateSalesChangeDropDownValue extends StateSales {
-  String _dropdownValue;
+  final String _dropdownValue;
 
   StateSalesChangeDropDownValue(this._dropdownValue);
 

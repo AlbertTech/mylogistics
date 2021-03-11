@@ -75,7 +75,7 @@ class MyViewProductWidget extends StatelessWidget {
                     if (state.props.isEmpty || state.props.single == null) {
                       return GestureDetector(
                         onTap: () {
-                          utilityBlocImage.add(UtilityEventImage_ChangeFileImagePath());
+                          utilityBlocImage.add(UtilityEventImageChangeFileImagePath());
                         },
                         child: Container(
                           height: mediaSize.height * .375,
@@ -89,7 +89,7 @@ class MyViewProductWidget extends StatelessWidget {
                     } else {
                       return GestureDetector(
                           onTap: () {
-                            utilityBlocImage.add(UtilityEventImage_ChangeFileImagePath());
+                            utilityBlocImage.add(UtilityEventImageChangeFileImagePath());
                           },
                           child: Container(
                             height: mediaSize.height * .4,

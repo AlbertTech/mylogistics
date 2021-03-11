@@ -6,6 +6,6 @@ class AddEventImage extends Equatable{
   List<Object> get props => [];
 }
 
-class UtilityEventImage_ChangeFileImagePath extends AddEventImage{
+class UtilityEventImageChangeFileImagePath extends AddEventImage{
 
 }

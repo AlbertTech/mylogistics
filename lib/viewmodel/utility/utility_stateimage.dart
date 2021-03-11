@@ -9,8 +9,9 @@ class AddStatesImage extends Equatable{
 }
 
 
+
 class UtilityStatesPlaceImageSuccessFul extends AddStatesImage {
-  File file;
+ final File file;
   UtilityStatesPlaceImageSuccessFul(this.file);
 
   @override

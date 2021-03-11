@@ -6,30 +6,30 @@ class AddStateTypeAhead extends Equatable {
   List<Object> get props => [];
 }
 
-class AddState_FetchDataSuccessFul extends AddStateTypeAhead {
+class AddStateFetchDataSuccessFul extends AddStateTypeAhead {
   final String _string;
 
-  AddState_FetchDataSuccessFul(this._string);
+  AddStateFetchDataSuccessFul(this._string);
 
   @override
   // TODO: implement props
   List<Object> get props => [_string];
 }
 
-class AddState_FetchDataLoading extends AddStateTypeAhead {
+class AddStateFetchDataLoading extends AddStateTypeAhead {
   final String _string;
 
-  AddState_FetchDataLoading(this._string);
+  AddStateFetchDataLoading(this._string);
 
   @override
   // TODO: implement props
   List<Object> get props => [_string];
 }
 
-class AddState_FetchDataFailed extends AddStateTypeAhead {
+class AddStateFetchDataFailed extends AddStateTypeAhead {
   final String _string;
 
-  AddState_FetchDataFailed(this._string);
+  AddStateFetchDataFailed(this._string);
 
   @override
   // TODO: implement props

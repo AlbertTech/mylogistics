@@ -15,7 +15,7 @@ class UtilityBlocImage extends Bloc<AddEventImage, AddStatesImage> {
   @override
   Stream<AddStatesImage> mapEventToState(AddEventImage event) async* {
     addImageModel = new UtilityImageModel();
-    if (event is UtilityEventImage_ChangeFileImagePath) {
+    if (event is UtilityEventImageChangeFileImagePath) {
       print("now selection");
       try {
 

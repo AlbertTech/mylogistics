@@ -11,8 +11,8 @@ class AddBlocTypeAhead extends Bloc<AddEventTypeAhead, AddStateTypeAhead> {
 
   @override
   Stream<AddStateTypeAhead> mapEventToState(AddEventTypeAhead event) async* {
-    if (event is AddEvent_FetchTypeAhead) {
-      yield AddState_FetchDataSuccessFul(event.props.single);
+    if (event is AddEventFetchTypeAhead) {
+      yield AddStateFetchDataSuccessFul(event.props.single);
     }
   }
 

@@ -79,7 +79,7 @@ class AddViewWidget extends StatelessWidget {
                           decoration:
                               InputDecoration(border: OutlineInputBorder())),
                       suggestionsCallback: (pattern) async {
-                        addBlocTypeAhead.add(AddEvent_FetchTypeAhead(pattern));
+                        addBlocTypeAhead.add(AddEventFetchTypeAhead(pattern));
                         return state.props.single;
                       },
                       itemBuilder: (context, suggestion) {
@@ -97,7 +97,7 @@ class AddViewWidget extends StatelessWidget {
                 if (state.props.isEmpty || state.props.single == null) {
                   return GestureDetector(
                     onTap: () {
-                      addBlocImage.add(UtilityEventImage_ChangeFileImagePath());
+                      addBlocImage.add(UtilityEventImageChangeFileImagePath());
                     },
                     child: Container(
                       height: mediaSize.height * .475,
@@ -111,7 +111,7 @@ class AddViewWidget extends StatelessWidget {
                 } else {
                   return GestureDetector(
                       onTap: () {
-                        addBlocImage.add(UtilityEventImage_ChangeFileImagePath());
+                        addBlocImage.add(UtilityEventImageChangeFileImagePath());
                       },
                       child: Container(
                         height: mediaSize.height * .475,

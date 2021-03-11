@@ -7,10 +7,10 @@ class AddEventTypeAhead extends Equatable {
 
 }
 
-class AddEvent_FetchTypeAhead extends AddEventTypeAhead {
-  String pattern;
+class AddEventFetchTypeAhead extends AddEventTypeAhead {
+  final String pattern;
 
-  AddEvent_FetchTypeAhead(this.pattern);
+  AddEventFetchTypeAhead(this.pattern);
 @override
   // TODO: implement props
   List<Object> get props => [this.pattern];
