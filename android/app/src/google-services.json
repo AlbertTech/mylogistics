@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "726528347061",
+    "project_id": "mylogistics-feda6",
+    "storage_bucket": "mylogistics-feda6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726528347061:android:e80eb6ce882c532b19e7fc",
+        "android_client_info": {
+          "package_name": "com.kislap.mylogistics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726528347061-pmefd0eelgs5gc5ngc46pqheome9hto7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kislap.mylogistics",
+            "certificate_hash": "389b55140048d5ae582841dd94a908fa7b9526e2"
+          }
+        },
+        {
+          "client_id": "726528347061-grguml3bbr0dhiinv1i91g1lrhjq7bp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD522itDp3SA2t8anLKQlewWE7-4VTScxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726528347061-grguml3bbr0dhiinv1i91g1lrhjq7bp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
