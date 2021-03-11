@@ -15,7 +15,7 @@ import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(name: "myLogistics");
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(AddView());
