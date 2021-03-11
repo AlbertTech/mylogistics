@@ -7,8 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mylogistics/view/add_view.dart';
 
-import 'file:///D:/Programming/Flutter_Projects/mylogistics/lib/view/add_view.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
