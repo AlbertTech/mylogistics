@@ -12,7 +12,6 @@ import 'package:mylogistics/viewmodel/add/add_statetypeahead.dart';
 import 'package:mylogistics/viewmodel/utility/utility_blocimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_eventimage.dart';
 import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(name: "myLogistics");
