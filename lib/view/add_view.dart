@@ -31,8 +31,8 @@ class AddView extends StatelessWidget {
       home: Scaffold(
           resizeToAvoidBottomInset: false,
           body: MultiBlocProvider(providers: [
-            BlocProvider(
-                create: (context) => AddBlocInsertData(AddRepository())),
+           /* BlocProvider(
+                create: (context) => AddBlocInsertData(AddRepository())),*/
             BlocProvider(
                 create: (context) => AddBlocTypeAhead(AddRepository())),
             BlocProvider(
