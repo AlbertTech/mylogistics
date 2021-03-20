@@ -71,7 +71,7 @@ class MyViewProductWidget extends StatelessWidget {
                     onSuggestionSelected: (suggestion) {},
                   )),
               Spacer(),
-              BlocBuilder<UtilityBlocImage, AddStatesImage>(
+              BlocBuilder<UtilityBlocImage, UtilityStatesImage>(
                   builder: (context, state) {
                     if (state.props.isEmpty || state.props.single == null) {
                       return GestureDetector(

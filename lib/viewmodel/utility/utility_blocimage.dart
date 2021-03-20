@@ -5,15 +5,15 @@ import 'package:mylogistics/model/utility/UtilityImageModel.dart';
 import 'utility_eventimage.dart';
 import 'utility_stateimage.dart';
 
-class UtilityBlocImage extends Bloc<AddEventImage, AddStatesImage> {
+class UtilityBlocImage extends Bloc<UtilityEventImage, UtilityStatesImage> {
   AddRepository addRepository;
   UtilityImageModel addImageModel;
 
   UtilityBlocImage(this.addRepository, this.addImageModel)
-      : super(AddStatesImage());
+      : super(UtilityStatesImage());
 
   @override
-  Stream<AddStatesImage> mapEventToState(AddEventImage event) async* {
+  Stream<UtilityStatesImage> mapEventToState(UtilityEventImage event) async* {
     addImageModel = new UtilityImageModel();
     if (event is UtilityEventImageChangeFileImagePath) {
       print("now selection");

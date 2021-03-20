@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 
-class AddStatesImage extends Equatable{
+class UtilityStatesImage extends Equatable{
   @override
   // TODO: implement props
   List<Object> get props => [];
@@ -10,7 +10,7 @@ class AddStatesImage extends Equatable{
 
 
 
-class UtilityStatesPlaceImageSuccessFul extends AddStatesImage {
+class UtilityStatesPlaceImageSuccessFul extends UtilityStatesImage {
  final File file;
   UtilityStatesPlaceImageSuccessFul(this.file);
 
@@ -19,7 +19,7 @@ class UtilityStatesPlaceImageSuccessFul extends AddStatesImage {
   List<Object> get props => [this.file];
 }
 
-class UtilityStatesPlaceImageFailed extends AddStatesImage {
+class UtilityStatesPlaceImageFailed extends UtilityStatesImage {
   @override
   // TODO: implement props
   List<Object> get props => [];

@@ -4,20 +4,27 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:mylogistics/model/add/add_repo.dart';
 import 'package:mylogistics/model/sales/sales_values.dart';
+import 'package:mylogistics/model/utility/UtilityImageModel.dart';
 import 'package:mylogistics/viewmodel/sales/sales_bloc.dart';
 import 'package:mylogistics/viewmodel/sales/sales_events.dart';
 import 'package:mylogistics/viewmodel/sales/sales_states.dart';
+import 'package:mylogistics/viewmodel/utility/utility_blocimage.dart';
+import 'package:mylogistics/viewmodel/utility/utility_stateimage.dart';
 
 class SalesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: BlocProvider.value(
-              value: BlocSales(AddRepository(), SalesValues()),
-              child: MySalesViewWidget())),
-    );
+        home: Scaffold(
+            resizeToAvoidBottomInset: false,
+            body: MultiBlocProvider(providers: [
+              BlocProvider(
+                  create: (context) =>
+                      UtilityBlocImage(AddRepository(), UtilityImageModel())),
+              BlocProvider(
+                  create: (context) =>
+                      BlocSales(AddRepository(), SalesValues())),
+            ], child: MySalesViewWidget())));
   }
 }
 
@@ -176,7 +183,7 @@ class MySalesViewWidget extends StatelessWidget {
               decoration: InputDecoration(
             contentPadding: EdgeInsets.all(0),
             prefixIcon: Icon(Icons.search),
-            labelText: 'name, category, etc..',
+            labelText: 'item, category, etc..',
           )));
     }
   }
@@ -192,7 +199,8 @@ class MySalesViewWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    BlocBuilder/*<>*/(builder: (context, state) {
+                    BlocBuilder<UtilityBlocImage, UtilityStatesImage>(
+                        builder: (context, state) {
                       if (state.props.isEmpty || state.props.single == null) {
                         return GestureDetector(
                           onTap: () {
@@ -215,13 +223,13 @@ class MySalesViewWidget extends StatelessWidget {
                               width: mediaSize.width * .8,
                               child: Center(
                                   child: (Image.file(
-                                    state.props.single,
-                                    fit: BoxFit.contain,
-                                    filterQuality: FilterQuality.high,
-                                  ))),
+                                state.props.single,
+                                fit: BoxFit.contain,
+                                filterQuality: FilterQuality.high,
+                              ))),
                               decoration: BoxDecoration(
                                 border:
-                                Border.all(color: Colors.grey, width: 1),
+                                    Border.all(color: Colors.grey, width: 1),
                               ),
                             ));
                       }

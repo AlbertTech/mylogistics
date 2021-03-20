@@ -1,5 +1,5 @@
 class SalesValues {
-  List<String> myDropdownList = ["Name", "Category", "Date"];
+  List<String> myDropdownList = ["Item", "Category", "Date"];
 
   String myDropDownValue = "Date";
 
