@@ -24,8 +24,8 @@ void main() async {
 }
 
 class AddView extends StatelessWidget {
-  TextEditingController txtDescName = TextEditingController();
-  TextEditingController txtDescValue = TextEditingController();
+  final TextEditingController txtDescName = TextEditingController();
+  final TextEditingController txtDescValue = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
